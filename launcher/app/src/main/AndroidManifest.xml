@@ -14,6 +14,15 @@
          FINE" rule does not apply here. -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
         tools:ignore="CoarseFineLocation" />
+    <!-- The Bluetooth pill. Android 12+ splits Bluetooth into runtime permissions granted over adb
+         at install time; Android 8-11 use the legacy install-time pair. -->
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <!-- The pairing panel runs the launcher's own discovery. neverForLocation: audio accessories only. -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation" />
+
     <!-- Puts the remote's accessibility helpers back after a force stop of this app took them off the enabled
          list (ServiceRepair). Granted with pm grant by build-and-install when a helper is enabled. -->
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"
@@ -58,9 +67,11 @@
         <!-- China-market MIUI TV firmware: the Settings and Wi-Fi pills fall back to Xiaomi's settings app.
              Fire TV: the real settings menu lives in the stock launcher (see settings_fallback_components). -->
         <package android:name="com.xiaomi.mitv.settings" />
+        <!-- The Bluetooth pill starts this app's accessory screens directly. -->
+        <package android:name="com.android.tv.settings" />
         <package android:name="com.tcl.settings" />
         <package android:name="com.amazon.tv.launcher" />
-        <!-- Coocaa OS sources for the Inputs menu (coocaa_sources); see CoocaaSources. -->
+        <!-- Coocaa OS sources for the Inputs menu (coocaaSources); see CoocaaSources. -->
         <provider android:authorities="com.skyworth.tv.provider" />
         <provider android:authorities="com.skyworth.tv.sdk.provider" />
     </queries>

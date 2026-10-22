@@ -19,6 +19,11 @@
     <string name="ethernet">Ethernet</string>
     <string name="offline">Нет сети</string>
     <string name="not_available">Недоступно на этом телевизоре</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="bt_screen_row">Bluetooth ТВ</string>
+    <string name="bt_radio_busy">Занято — повторите</string>
+    <string name="bt_pairing">Сопряжение…</string>
+    <string name="bt_failed_retry">Нет сопряжения — повторите</string>
     <string name="cant_open">Не удалось открыть %1$s</string>
     <string name="date_format">EEEE, d MMMM</string>
     <string name="date_format_home">EEEE\nd MMMM</string>
